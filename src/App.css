@@ -16,16 +16,9 @@
   font-size: 16px;
 }
 
-html {
-  height: 100%;
-}
-
-body {
-  height: inherit;
-}
-
 #root {
-  height: inherit;
+  height: 100%;
+  min-height: 100vh;
 
   padding: 4.5rem 1.5rem;
 
@@ -38,4 +31,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
+}
+
+img {
+  display: block;
 }
