@@ -1,6 +1,6 @@
 export default function App() {
   return (
-    <div>
+    <main data-text-preset="main">
       Daniel Clifford
       Verified Graduate
 
@@ -52,6 +52,6 @@ export default function App() {
       could ever have. In fact, I’ve often referred to it during interviews as an example of my developent 
       experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 
       100% recommend! ”      
-    </div>
+    </main>
   )
 }
