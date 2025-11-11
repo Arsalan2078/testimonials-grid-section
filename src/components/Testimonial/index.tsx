@@ -21,19 +21,21 @@ export default function Testimonial({
   return (
     <div className={styles.testimonial} data-color={color}>
       <div>
-        <div>
-          <img src={img} alt={name} />
+        <div className={styles.client}>
+          <img src={img} alt={name} data-width="1.75" />
 
           <div>
             <div data-text-preset="name">{name}</div>
-            <div data-text-preset="status">{status}</div>
+            <div data-opacity="0.5" data-text-preset="status">
+              {status}
+            </div>
           </div>
         </div>
 
         <p data-text-preset="display">{testimonial.short}</p>
       </div>
 
-      <blockquote>{testimonial.long}</blockquote>
+      <blockquote data-opacity="0.7">{testimonial.long}</blockquote>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@layer reset, base, text-presets;
+@layer reset, base, text-presets, utilities;
 
 @font-face {
   font-display: swap;
@@ -19,13 +19,15 @@
 }
 
 :root {
-  --c-violet: hsl(263, 55%, 52%);
-  --c-dark-grayish-blue: hsl(217, 19%, 35%);
-  --c-dark-blackish-blue: hsl(219, 29%, 14%);
-  --c-white: hsl(0, 0%, 100%);
-  --c-light-gray: hsl(0, 0%, 81%);
-  --c-light-grayish-blue: hsl(210, 46%, 95%);
+  /* colors */
+  --c-violet: hsl(263 55 52);
+  --c-dark-grayish-blue: hsl(217 19 35);
+  --c-dark-blackish-blue: hsl(219 29 14);
+  --c-white: hsl(0 0 100);
+  --c-light-gray: hsl(0 0 81);
+  --c-light-grayish-blue: hsl(210 46 95);
 
+  /* fonts */
   --ff-barlow-semi-condensed: "Barlow Semi Condensed", sans-serif;
 
   --fw-medium: 500;
@@ -35,6 +37,7 @@
   --fs-rg: calc(13 / 16 * 1rem);
   --fs-sm: calc(11 / 16 * 1rem);
 
+  --lh-normal: normal;
   --lh-100: 1;
   --lh-138: calc(18 / 13);
 }
@@ -53,12 +56,18 @@
   }
 }
 
+@layer utilities {
+  [data-opacity] {
+    opacity: attr(data-opacity type(<number>));
+  }
+}
+
 @layer text-presets {
   [data-text-preset="display"] {
     font-family: var(--ff-barlow-semi-condensed);
     font-weight: var(--fw-semibold);
     font-size: var(--fs-lg);
-    line-height: var(--lh-100);
+    line-height: var(--lh-normal);
   }
 
   [data-text-preset="main"] {

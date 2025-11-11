@@ -1,2 +1,56 @@
 .testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+
+  /* container with .client and 1st part of testimonial (short) */
+  & > *:first-child {
+    display: inherit;
+    flex-direction: inherit;
+    gap: inherit;
+  }
+
+  border-radius: 0.5rem;
+  padding: 1.625rem 2rem;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: calc(40 / 16 * 1rem) calc(60 / 16 * 1rem) calc(50 / 16 * 1rem)
+    calc(-47 / 16 * 1rem) hsl(from var(--c-dark-grayish-blue) h s l / 0.2474);
+
+  /* contains img, name and status */
+  & .client {
+    display: flex;
+    align-items: center;
+    gap: 1.0625rem;
+
+    & > img {
+      outline: 0.125rem solid var(--img-outline-color, transparent);
+      border-radius: 99rem;
+      width: attr(data-width rem);
+      aspect-ratio: 1;
+    }
+  }
+
+  /* testimonial color variations */
+  &[data-color="white"] {
+    --background-color: var(--c-white);
+    --text-color: var(--c-dark-grayish-blue);
+  }
+
+  &[data-color="violet"] {
+    --background-color: var(--c-violet);
+    --text-color: var(--c-white);
+    --img-outline-color: hsl(264, 82%, 70%);
+  }
+
+  &[data-color="dark-grayish-blue"] {
+    --background-color: var(--c-dark-grayish-blue);
+    --text-color: var(--c-white);
+  }
+
+  &[data-color="dark-blackish-blue"] {
+    --background-color: var(--c-dark-blackish-blue);
+    --text-color: var(--c-white);
+  }
 }
