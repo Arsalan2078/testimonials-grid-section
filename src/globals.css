@@ -1,57 +1,4 @@
-@layer reset, text-presets;
-
-:root {
-  --c-moderate-violet: hsl(263, 55%, 52%);
-  --c-very-dark-grayish-blue: hsl(217, 19%, 35%);
-  --c-very-dark-blackish-blue: hsl(219, 29%, 14%);
-  --c-white: hsl(0, 0%, 100%);
-  --c-light-gray: hsl(0, 0%, 81%);
-  --c-light-grayish-blue: hsl(210, 46%, 95%);
-
-  --ff-barlow-semi-condensed: "Barlow Semi Condensed", sans-serif;
-
-  --fw-medium: 500;
-  --fw-semibold: 600;
-
-  --fs-lg: calc(20 / 16 * 1rem);
-  --fs-rg: calc(13 / 16 * 1rem);
-  --fs-sm: calc(11 / 16 * 1rem);
-
-  --lh-100: 1;
-  --lh-138: calc(18 / 13);
-}
-
-@layer text-presets {
-  [data-text-preset="title"] {
-    font-family: var(--ff-barlow-semi-condensed);
-    font-weight: var(--fw-semibold);
-    font-size: var(--fs-lg);
-    line-height: var(--lh-100);
-  }
-
-  [data-text-preset="main"] {
-    font-family: var(--ff-barlow-semi-condensed);
-    font-weight: var(--fw-medium);
-    font-size: var(--fs-rg);
-    line-height: var(--lh-138);
-    opacity: 0.7;
-  }
-
-  [data-text-preset="name"] {
-    font-family: var(--ff-barlow-semi-condensed);
-    font-weight: var(--fw-medium);
-    font-size: var(--fs-rg);
-    line-height: var(--lh-100);
-  }
-
-  [data-text-preset="status"] {
-    font-family: var(--ff-barlow-semi-condensed);
-    font-weight: var(--fw-medium);
-    font-size: var(--fs-sm);
-    line-height: var(--lh-100);
-    opacity: 0.5;
-  }
-}
+@layer reset, base, text-presets;
 
 @font-face {
   font-display: swap;
@@ -69,6 +16,71 @@
   font-weight: 600;
   src: local("Barlow Semi Condensed"),
     url("/fonts/barlow-semi-condensed-v16-latin-600.woff2") format("woff2");
+}
+
+:root {
+  --c-violet: hsl(263, 55%, 52%);
+  --c-dark-grayish-blue: hsl(217, 19%, 35%);
+  --c-dark-blackish-blue: hsl(219, 29%, 14%);
+  --c-white: hsl(0, 0%, 100%);
+  --c-light-gray: hsl(0, 0%, 81%);
+  --c-light-grayish-blue: hsl(210, 46%, 95%);
+
+  --ff-barlow-semi-condensed: "Barlow Semi Condensed", sans-serif;
+
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --fs-lg: calc(20 / 16 * 1rem);
+  --fs-rg: calc(13 / 16 * 1rem);
+  --fs-sm: calc(11 / 16 * 1rem);
+
+  --lh-100: 1;
+  --lh-138: calc(18 / 13);
+}
+
+@layer base {
+  img {
+    display: block;
+  }
+
+  blockquote::before {
+    content: "“ ";
+  }
+
+  blockquote::after {
+    content: " ”";
+  }
+}
+
+@layer text-presets {
+  [data-text-preset="display"] {
+    font-family: var(--ff-barlow-semi-condensed);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-lg);
+    line-height: var(--lh-100);
+  }
+
+  [data-text-preset="main"] {
+    font-family: var(--ff-barlow-semi-condensed);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-rg);
+    line-height: var(--lh-138);
+  }
+
+  [data-text-preset="name"] {
+    font-family: var(--ff-barlow-semi-condensed);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-rg);
+    line-height: var(--lh-100);
+  }
+
+  [data-text-preset="status"] {
+    font-family: var(--ff-barlow-semi-condensed);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-100);
+  }
 }
 
 @layer reset {
