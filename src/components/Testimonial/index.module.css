@@ -30,9 +30,15 @@
       width: attr(data-width rem);
       aspect-ratio: 1;
     }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
   }
 
-  /* testimonial color variations */
+  /* testimonial variations */
   &[data-color="white"] {
     --background-color: var(--c-white);
     --text-color: var(--c-dark-grayish-blue);
@@ -42,6 +48,14 @@
     --background-color: var(--c-violet);
     --text-color: var(--c-white);
     --img-outline-color: hsl(264, 82%, 70%);
+
+    background-image: url("/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+
+    @media screen and (min-width: calc(588 / 16 * 1rem)) {
+      background-position-x: 82%;
+    }
   }
 
   &[data-color="dark-grayish-blue"] {
